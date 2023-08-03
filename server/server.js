@@ -9,7 +9,7 @@ app.use(express.json())
 
 const corsOptions = {
     origin: [
-      "http://localhost:3000",
+      "https://send-mail-five.vercel.app",
     ],
     credentials: true, 
     optionSuccessStatus: 200,
