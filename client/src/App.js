@@ -32,7 +32,7 @@ const App = () => {
     try {
   
       setLoading(true);
-      await axios.post("http://localhost:9090/send_mail", formData);
+      await axios.post("https://send-mail-server.vercel.app/send_mail", formData);
       setLoading(false);
       toast.success("Email sent successfully !", {
         position: "top-center",
