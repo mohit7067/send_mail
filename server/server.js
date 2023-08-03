@@ -6,6 +6,30 @@ const nodemailer = require('nodemailer');
 
 
 app.use(express.json())
+
+const corsOptions = {
+    origin: [
+      "http://localhost:3000",
+    ],
+    credentials: true, 
+    optionSuccessStatus: 200,
+  };
+  app.use(cors(corsOptions));
+  
+  app.use(function (req, res, next) {
+    res.header("Content-Type", "application/json;charset=UTF-8");
+    res.header("Access-Control-Allow-Credentials", true);
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+  });
+  
+  app.get("/", (req, res) => {
+    res.send("homepage !");
+  });
+  
 app.use(cors())
 
 
